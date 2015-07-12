@@ -1,0 +1,36 @@
+<!doctype html>
+
+<title>Image Transparency</title>
+
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="options.css">
+
+<form>
+
+  <ul>
+    <li>
+      <h1>Image Transparency</h1>
+    </li>
+    <li>
+      <label for="color1">background color</label>
+      <input type="color" value="#ffffff" id="color1">
+    </li>
+    <li>
+      <label for="color2">main color</label>
+      <input type="color" value="#cccccc" id="color2">
+    </li>
+    <li>
+      <label for="size">size</label>
+      <input type="range" value="8" min="1" max="512" id="size">
+      <input type="text" id="size-output" readonly>
+    </li>
+    <li>
+      <label for="reset">&nbsp;</label>
+      <input type="button" id="reset" value="reset">
+    </li>
+  </ul>
+
+</form>
+
+<script src="options.js"></script>
