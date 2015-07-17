@@ -2,7 +2,14 @@
 
 (function(glob) {
 
-  var defaults = {
+  var
+    extension = chrome.runtime.getManifest(),
+    log = console.log.bind(
+      console,
+      '%c' + extension.name + ' ' + extension.version,
+      'background: #333; color: #bada55; padding: 0 3px; border-radius: 4px;'
+    ),
+    defaults = {
       color1: '#ffffff',
       color2: '#cccccc',
       size: 8

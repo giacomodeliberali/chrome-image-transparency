@@ -2,17 +2,24 @@
 
 (function(glob) {
 
-  var doc = glob.document,
-      html = doc.documentElement,
-      $ = function(id) {
-        return doc.getElementById(id);
-      },
-      color1 = $('color1'),
-      color2 = $('color2'),
-      size = $('size'),
-      reset = $('reset'),
-      sizeOutput = $('size-output'),
-      defaults = {};
+  var
+    extension = chrome.runtime.getManifest(),
+    log = console.log.bind(
+      console,
+      '%c' + extension.name + ' ' + extension.version,
+      'background: #333; color: #bada55; padding: 0 3px; border-radius: 4px;'
+    ),
+    doc = glob.document,
+    html = doc.documentElement,
+    $ = function(id) {
+      return doc.getElementById(id);
+    },
+    color1 = $('color1'),
+    color2 = $('color2'),
+    size = $('size'),
+    reset = $('reset'),
+    sizeOutput = $('size-output'),
+    defaults = {};
 
   function debounce(fn, delay) {
     var timer = null;
