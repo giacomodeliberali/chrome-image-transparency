@@ -11,14 +11,12 @@
     ),
     doc = glob.document,
     html = doc.documentElement,
-    $ = function(id) {
-      return doc.getElementById(id);
-    },
-    color1 = $('color1'),
-    color2 = $('color2'),
-    size = $('size'),
-    reset = $('reset'),
-    sizeOutput = $('size-output'),
+    id = doc.getElementById.bind(doc),
+    color1 = id('color1'),
+    color2 = id('color2'),
+    size = id('size'),
+    reset = id('reset'),
+    sizeOutput = id('size-output'),
     defaults = {};
 
   function debounce(fn, delay) {
