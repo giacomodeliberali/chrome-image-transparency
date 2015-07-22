@@ -76,7 +76,7 @@
     var go;
 
     details.responseHeaders.forEach(function(e) {
-      if (e.name === 'Content-Type' && /^image\/.+/i.test(e.value)) {
+      if (/content-type/i.test(e.name) && /^image\/.+/i.test(e.value)) {
         go = true;
       }
     });
