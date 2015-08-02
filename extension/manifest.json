@@ -1,21 +1,21 @@
 {
   "name": "Image Transparency",
   "manifest_version": 2,
-  "version": "3.5",
+  "version": "3.6",
   "author": "Tomek Fijoł",
   "description": "Shows image transparency",
   "icons": {
-    "16": "img/16.png",
-    "48": "img/48.png",
-    "128": "img/128.png"
+    "16": "images/16.png",
+    "48": "images/48.png",
+    "128": "images/128.png"
   },
   "background": {
     "scripts": ["background.js"]
   },
   "page_action": {
     "default_icon": {
-      "19": "img/19.png",
-      "38": "img/38.png"
+      "19": "images/19.png",
+      "38": "images/38.png"
     },
     "default_title": "Image Transparency Options"
   },

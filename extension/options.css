@@ -14,7 +14,6 @@ ul {
   margin: 0;
   padding: 15px 0;
   width: 500px;
-  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.9);
   list-style: none;
 }
@@ -43,12 +42,8 @@ label {
 }
 
 input[type="text"] {
-  margin: 5px 0 0 20px;
-  padding: 0 8px;
+  margin: 4px 0 0 20px;
   width: 50px;
-  height: 24px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
   background-color: #eee;
   color: #555;
   vertical-align: top;
@@ -67,25 +62,5 @@ input[type="range"] {
 }
 
 input[type="button"] {
-  padding: 1px 8px;
-  height: 24px;
-  color: #333;
   font-size: 12px;
-}
-
-input[type="color"],
-input[type="button"] {
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  background-image: linear-gradient(#fff, #eee);
-  box-shadow: none;
-}
-
-input[type="color"]:hover,
-input[type="color"]:focus,
-input[type="color"]:active,
-input[type="button"]:hover,
-input[type="button"]:focus,
-input[type="button"]:active {
-  background-image: linear-gradient(#eee, #fff);
 }
