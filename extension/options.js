@@ -30,10 +30,10 @@
   }
 
   function setBackground(response) {
-    if (response && response.template) {
+    if (response && response.template && response.template.svg) {
       html.style.backgroundImage =
           'url(data:image/svg+xml;base64,' +
-          glob.btoa(response.template) + ')';
+          glob.btoa(response.template.svg) + ')';
     }
   }
 
