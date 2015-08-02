@@ -5,5 +5,5 @@
 [ ] test?
 [ ] store images
 [ ] gulp
-[ ] compress images
-[ ] fallback css gradient
+[x] compress images
+[x] fallback css gradient
