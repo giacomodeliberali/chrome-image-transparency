@@ -1,0 +1,16 @@
+{
+  "name": "chrome-image-transparency",
+  "version": "0.3.7",
+  "description": "chrome-image-transparency",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomek-f/chrome-image-transparency.git"
+  },
+  "keywords": [
+    "chrome",
+    "image",
+    "transparency"
+  ],
+  "author": "Tomasz Fijoł",
+  "license": "MIT"
+}
