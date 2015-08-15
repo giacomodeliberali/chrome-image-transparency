@@ -3,7 +3,9 @@
 [ ] folders
 [ ] options (s)css
 [ ] test?
-[ ] store images
+[ ] store current pattern (svg & css)
 [ ] gulp
 [x] compress images
 [x] fallback css gradient
+[ ] image for app store
+[ ] icons
