@@ -2,39 +2,33 @@
 
 (function(glob) {
 
-  let
-    extension = chrome.runtime.getManifest(),
-    log = console.log.bind(
+  const extension = chrome.runtime.getManifest();
+  const id = doc.getElementById.bind(doc);
+  const log = console.log.bind(
       console,
       '%c' + extension.name + ' ' + extension.version,
       'background: #333; color: #bada55; padding: 0 3px; border-radius: 4px;'
-    ),
-    doc = glob.document,
-    html = doc.documentElement,
-    id = doc.getElementById.bind(doc),
-    color1 = id('color1'),
-    color2 = id('color2'),
-    size = id('size'),
-    reset = id('reset'),
-    sizeOutput = id('size-output'),
-    defaults = {};
-
+    );
+  const doc = glob.document;
+  const html = doc.documentElement;
+  const color1 = id('color1');
+  const color2 = id('color2');
+  const size = id('size');
+  const reset = id('reset');
+  const sizeOutput = id('size-output');
+  const defaults = {};
+  
   function debounce(fn, delay) {
     var timer = null;
-    return function() {
+    return function () {
       clearTimeout(timer);
-      timer = setTimeout(function(args) {
-        fn.apply(this, args);
-      }.bind(this, arguments), delay);
+      timer = setTimeout(Function.prototype.apply.bind(fn, this, arguments), delay);
     };
   }
 
   function setBackground(response) {
-    if (response && response.template && response.template.svg) {
-      html.style.backgroundImage =
-          'url(data:image/svg+xml;base64,' +
-          glob.btoa(response.template.svg) + ')';
-    }
+    if (response && response.template && response.template.svg)
+      html.style.backgroundImage = 'url(data:image/svg+xml;base64,' + glob.btoa(response.template.svg) + ')';
   }
 
   function getTemplateAndSetIt() {
@@ -45,17 +39,14 @@
   }
 
   function getValue(name) {
-    if (!glob.localStorage[name]) {
+    if (!glob.localStorage[name])
       glob.localStorage[name] = defaults[name];
-    }
     return glob.localStorage[name];
   }
 
   function saveValue(name, value, halt) {
     glob.localStorage[name] = value;
-    if (!halt) {
-      getTemplateAndSetIt();
-    }
+    if (!halt) getTemplateAndSetIt();
   }
 
   function syncSize() {
@@ -99,13 +90,9 @@
     }
   }
 
-  function init() {
-    // defaults in one place
-    chrome.runtime.sendMessage({
+  // init
+  chrome.runtime.sendMessage({
       action: 'giveDefaults'
     }, setDefaultsAndStart);
-  }
-
-  doc.addEventListener('DOMContentLoaded', init);
 
 }(this));
