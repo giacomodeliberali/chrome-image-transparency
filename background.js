@@ -95,8 +95,7 @@
       svg = glob.btoa(template.svg);
     // gradient for Content Security Policy error (eg. GitHub)
     // gradient is buggy
-    // svg only color option
-    return 'html, svg { ' + template.gradient + '); }' +
+    return 'html { ' + template.gradient + '); }' +
       'body { background: url(data:image/svg+xml;base64,' + svg + '); }';
   }
 
