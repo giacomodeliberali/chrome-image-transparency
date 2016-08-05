@@ -1,9 +1,8 @@
-[ ] CommonJS
+[ ] es6
+[ ] ?? csp hack
 [x] smaller css
-[ ] folders
-[ ] options (s)css
-[ ] test?
-[ ] store current pattern (svg & css)
+[-] folders
+[ ] options scss
 [ ] gulp
 [x] compress images
 [x] fallback css gradient
