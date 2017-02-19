@@ -1,25 +1,25 @@
 /* global chrome */
 
-(function(glob) {
+(function() {
 
-  const extension = chrome.runtime.getManifest();
-  const id = doc.getElementById.bind(doc);
-  const log = console.log.bind(
-      console,
-      '%c' + extension.name + ' ' + extension.version,
-      'background: #333; color: #bada55; padding: 0 3px; border-radius: 4px;'
-    );
-  const doc = glob.document;
+  // const extension = chrome.runtime.getManifest();
+  // const log = console.log.bind(
+  //     console,
+  //     '%c' + extension.name + ' ' + extension.version,
+  //     'background: #333; color: #bada55; padding: 0 3px; border-radius: 4px;'
+  //   );
+  const doc = window.document;
   const html = doc.documentElement;
+  const id = doc.getElementById.bind(doc);
   const color1 = id('color1');
   const color2 = id('color2');
   const size = id('size');
   const reset = id('reset');
   const sizeOutput = id('size-output');
   const defaults = {};
-  
+
   function debounce(fn, delay) {
-    var timer = null;
+    let timer = null;
     return function () {
       clearTimeout(timer);
       timer = setTimeout(Function.prototype.apply.bind(fn, this, arguments), delay);
@@ -27,8 +27,8 @@
   }
 
   function setBackground(response) {
-    if (response && response.template && response.template.svg)
-      html.style.backgroundImage = 'url(data:image/svg+xml;base64,' + glob.btoa(response.template.svg) + ')';
+    if (response && response.template)
+      html.style.backgroundImage = 'url(data:image/svg+xml;base64,' + window.btoa(response.template) + ')';
   }
 
   function getTemplateAndSetIt() {
@@ -39,13 +39,13 @@
   }
 
   function getValue(name) {
-    if (!glob.localStorage[name])
-      glob.localStorage[name] = defaults[name];
-    return glob.localStorage[name];
+    if (!window.localStorage[name])
+      window.localStorage[name] = defaults[name];
+    return window.localStorage[name];
   }
 
   function saveValue(name, value, halt) {
-    glob.localStorage[name] = value;
+    window.localStorage[name] = value;
     if (!halt) getTemplateAndSetIt();
   }
 
@@ -84,7 +84,7 @@
 
   function setDefaultsAndStart(response) {
     if (response && response.defaults) {
-      defaults = response.defaults;
+      Object.assign(defaults, response.defaults);
       setEvents();
       restoreValues();
     }
@@ -95,4 +95,4 @@
       action: 'giveDefaults'
     }, setDefaultsAndStart);
 
-}(this));
+}());
