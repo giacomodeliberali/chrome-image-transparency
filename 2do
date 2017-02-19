@@ -1,10 +1,5 @@
-[ ] es6
-[ ] es6 class or factory
-[ ] ?? csp hack
+[x] es6
 [x] smaller css
-[-] folders
-[ ] ?? options scss
-[ ] ?? gulp
 [x] compress images
 [x] fallback css gradient
 [ ] image for app store
