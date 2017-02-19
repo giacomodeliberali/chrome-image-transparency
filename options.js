@@ -1,6 +1,6 @@
 /* global chrome */
 
-(function() {
+(function () {
 
   // const extension = chrome.runtime.getManifest();
   // const log = console.log.bind(
@@ -69,14 +69,14 @@
   }
 
   function setEvents() {
-    color1.addEventListener('input', debounce(function() {
+    color1.addEventListener('input', debounce(function () {
       saveValue('color1', this.value);
     }, 500));
-    color2.addEventListener('input', debounce(function() {
+    color2.addEventListener('input', debounce(function () {
       saveValue('color2', this.value);
     }, 500));
     size.addEventListener('input', syncSize);
-    size.addEventListener('input', debounce(function() {
+    size.addEventListener('input', debounce(function () {
       saveValue('size', this.value);
     }, 500));
     reset.addEventListener('click', resetValues);
@@ -92,7 +92,7 @@
 
   // init
   chrome.runtime.sendMessage({
-      action: 'giveDefaults'
-    }, setDefaultsAndStart);
+    action: 'giveDefaults'
+  }, setDefaultsAndStart);
 
 }());

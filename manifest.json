@@ -10,7 +10,9 @@
     "128": "images/128.png"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
   "page_action": {
     "default_icon": {

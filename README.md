@@ -1,5 +1,3 @@
-chrome-image-transparency
-===========
+# chrome-image-transparency
 
-## Description
-chrome-image-transparency.
+> Shows image transparency in Google Chrome 
